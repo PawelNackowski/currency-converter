@@ -11,5 +11,9 @@ html {
     font-family: "Poppins";
     background: no-repeat fixed center url("../images/backgrund.jpg");
     background-size: auto 150%;
-    
+}
+
+.flexContainer {
+    display:flex;
+    justify-content: flex-end;
 }
