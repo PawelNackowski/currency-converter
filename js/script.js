@@ -1,24 +1,31 @@
-console.log("Wtam Ciebie w moim prostym kalkulaorze walut :)")
+{
+    const calculate = () => {
+        const plnElement = document.querySelector(".js-pln");
+        const amountElement = document.querySelector(".js-amount");
+        const currencyElement = document.querySelector(".js-currency")
+        const rateElement = document.querySelector(".js-rate");
 
-let plnElement = document.querySelector(".js-pln");
-let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency")
-let rateElement = document.querySelector(".js-rate");
+        const amount = amountElement.value;
+        const currency = currencyElement.value;
 
-formElement.addEventListener("input", () => {
+        const pln = amount * currency;
 
-    let amount = amountElement.value;
-    let currency = currencyElement.value;
+        if (amount >= 0) {
+            plnElement.innerText = pln.toFixed(2);
+        }
+        else {
+            plnElement.innerText = "podaj wartosć dodatnią"
+        };
 
-    let pln = amount * currency;
-
-    if (amount >= 0) {
-        plnElement.innerText = pln.toFixed(2);
+        rateElement.value = currency;
     }
-    else {
-        plnElement.innerText = "podaj wartosć dodatnią"
-    };
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
 
-    rateElement.value = currency;
-});
+        formElement.addEventListener("input", (calculate));
+    }
+
+    calculate();
+    init();
+
+}
