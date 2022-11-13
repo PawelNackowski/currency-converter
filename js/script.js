@@ -1,5 +1,5 @@
 {
-    const calculate = () => {
+    const onInputChange = () => {
         const plnElement = document.querySelector(".js-pln");
         const amountElement = document.querySelector(".js-amount");
         const currencyElement = document.querySelector(".js-currency")
@@ -8,7 +8,7 @@
         const amount = amountElement.value;
         const currency = currencyElement.value;
 
-        const pln = amount * currency;
+        const pln = calculateResult(amount, currency);
 
         if (amount >= 0) {
             plnElement.innerText = pln.toFixed(2);
@@ -19,13 +19,23 @@
 
         rateElement.value = currency;
     }
+
+    const calculateResult = (amount, currency) => {
+        return amount * currency
+    };
+
+    const updateResult = (amount, currency, reult) => {
+        
+    }
+
+
+
     const init = () => {
         const formElement = document.querySelector(".js-form");
 
-        formElement.addEventListener("input", (calculate));
+        formElement.addEventListener("input", (onInputChange));
     }
 
-    calculate();
     init();
 
 }
