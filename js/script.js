@@ -12,7 +12,7 @@
     }
 
     const calculateResult = (amount, currency) => {
-        return amount * currency
+        return amount * currency;
     };
 
     const updateResult = (amount, currency, result) => {
@@ -23,7 +23,7 @@
             plnElement.innerText = result.toFixed(2);
         }
         else {
-            plnElement.innerText = "podaj wartosć dodatnią"
+            plnElement.innerText = "podaj wartosć dodatnią";
         };
 
         rateElement.value = currency;
